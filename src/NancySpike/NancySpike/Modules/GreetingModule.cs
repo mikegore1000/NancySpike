@@ -7,7 +7,12 @@ namespace NancySpike.Modules
     {
         public GreetingModule()
         {
-            Get["/"] = parameters => new ResponseMessage { Greeting = "Hello World" };
+            Get["/"] = parameters =>
+            {
+                return Negotiate
+                    .WithStatusCode(HttpStatusCode.Accepted)
+                    .WithModel(new ResponseMessage { Greeting = "Hello World" });
+            };
         }
     }
 }

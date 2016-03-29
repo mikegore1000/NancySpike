@@ -14,7 +14,7 @@ namespace NancySpike.Tests
     public class GreetingModuleTests
     {
         [Test]
-        public void Should_Return_A_200_With_Greeting()
+        public void Should_Return_A_202_With_Greeting()
         {
             var bootstrapper = new Bootstrapper();
             var browser = new Browser(bootstrapper);
@@ -25,7 +25,7 @@ namespace NancySpike.Tests
                 with.Header("Content-Type", "application/json");
             });
 
-            Assert.That(result.StatusCode, Is.EqualTo(HttpStatusCode.OK));
+            Assert.That(result.StatusCode, Is.EqualTo(HttpStatusCode.Accepted));
             var body = result.Body.DeserializeJson<ResponseMessage>();
             Assert.That(body, Is.Not.Null);
             Assert.That(body.Greeting, Is.EqualTo("Hello World"));
