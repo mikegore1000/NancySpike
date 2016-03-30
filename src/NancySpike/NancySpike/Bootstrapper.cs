@@ -16,7 +16,8 @@ namespace NancySpike
             get
             {
                 // Overridden the processors to ensure only JSON responses are returned
-                // otherwise Nancy will try to return HTML when the browser requests content
+                // otherwise Nancy will try to return HTML when the browser requests content.
+                // Don't have to do this, especially if you use a REST client to manually call the service.
                 var processors = new[] { typeof(JsonProcessor) };
 
                 return NancyInternalConfiguration.WithOverrides(x => x.ResponseProcessors = processors);

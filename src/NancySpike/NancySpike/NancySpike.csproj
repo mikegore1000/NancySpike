@@ -67,6 +67,8 @@
     <Compile Include="Models\ResponseMessage.cs" />
     <Compile Include="Modules\GreetingModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\GreetingService.cs" />
+    <Compile Include="StatusCodeHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
